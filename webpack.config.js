@@ -9,6 +9,7 @@ module.exports = {
   mode: 'development',
   entry: {
     common: './src/js/common.js',
+    index: './src/js/index.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -19,7 +20,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      chunks: ['common'],
+      chunks: ['common', 'index'],
       inject: 'body',
     }),
     new MiniCssExtractPlugin(),
