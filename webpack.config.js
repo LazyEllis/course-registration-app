@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     common: './src/js/common.js',
     index: './src/js/index.js',
+    dashboard: './src/js/dashboard.js',
     'course-selection': './src/js/course-selection.js',
     'selected-courses': './src/js/selected-courses.js',
   },
@@ -23,6 +24,12 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.html',
       chunks: ['common', 'index'],
+      inject: 'body',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'dashboard.html',
+      template: './src/dashboard.html',
+      chunks: ['common', 'dashboard'],
       inject: 'body',
     }),
     new HtmlWebpackPlugin({
