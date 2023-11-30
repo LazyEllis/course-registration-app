@@ -11,6 +11,7 @@ module.exports = {
     common: './src/js/common.js',
     index: './src/js/index.js',
     'course-selection': './src/js/course-selection.js',
+    'selected-courses': './src/js/selected-courses.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -28,6 +29,12 @@ module.exports = {
       filename: 'course-selection.html',
       template: './src/course-selection.html',
       chunks: ['common', 'course-selection'],
+      inject: 'body',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'selected-courses.html',
+      template: './src/selected-courses.html',
+      chunks: ['common', 'selected-courses'],
       inject: 'body',
     }),
     new MiniCssExtractPlugin(),
