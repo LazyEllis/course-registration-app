@@ -1,23 +1,18 @@
-const createCourseRenderer = (tableBody) => {
-  const renderCourseRow = (course) => {
-    const row = tableBody.insertRow();
-    for (let i = 0; i < 4; i++) {
-      const cell = row.insertCell(i);
-      cell.textContent = Object.values(course)[i];
-    }
+export const renderCourseRow = (tableBody, course) => {
+  const row = tableBody.insertRow();
 
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.value = course.courseCode;
+  for (const value of Object.values(course)) {
+    const cell = row.insertCell();
+    cell.textContent = value;
+  }
 
-    checkbox.addEventListener('change', function () {
-      row.classList.toggle('table-active', this.checked);
-    });
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.value = course.courseCode;
 
-    row.insertCell(4).appendChild(checkbox);
-  };
+  checkbox.addEventListener('change', function () {
+    row.classList.toggle('table-active', this.checked);
+  });
 
-  return { renderCourseRow };
+  row.appendChild(document.createElement('td')).appendChild(checkbox);
 };
-
-export default createCourseRenderer;
