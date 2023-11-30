@@ -1,8 +1,21 @@
-const login = (e) => {
+import login from './login';
+
+const loginForm = document.getElementById('loginForm');
+
+const handleSubmit = (e) => {
   e.preventDefault();
-  window.location.href = 'dashboard.html';
+  const enteredStudentId = document.getElementById('student-id').value;
+  const enteredPassword = document.getElementById('password').value;
+
+  const loggedInStudent = login(enteredStudentId, enteredPassword);
+
+  if (loggedInStudent) {
+    alert('Successful login');
+    localStorage.setItem('loggedInStudent', JSON.stringify(loggedInStudent));
+    window.location.href = 'dashboard.html';
+  } else {
+    alert('Incorrect student ID or password');
+  }
 };
 
-const loginForm = document.querySelector('form');
-
-loginForm.addEventListener('submit', login);
+loginForm.addEventListener('submit', handleSubmit);
