@@ -1,8 +1,10 @@
+// Render welcome message in the paragraph
 const populateWelcomeMessage = (welcomeMessage) => {
   const welcomeParagraph = document.querySelector('.lead');
   welcomeParagraph.textContent = welcomeMessage;
 };
 
+// Display personal details in a table
 const displayPersonalDetails = (personalDetails) => {
   const personalDetailsTable = document.createElement('table');
   personalDetailsTable.className =

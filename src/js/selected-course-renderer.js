@@ -1,3 +1,4 @@
+// Render selected course in the list
 const displayCourse = (courseTitle, selectedCoursesListId) => {
   const selectedCoursesList = document.getElementById(selectedCoursesListId);
   const listItem = document.createElement('li');

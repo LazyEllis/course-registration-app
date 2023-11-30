@@ -1,3 +1,4 @@
+// Courses Data
 const courses = [
   {
     courseCode: 'CS101',

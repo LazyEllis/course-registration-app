@@ -1,9 +1,12 @@
+// Logic for dashboard
 const loggedInStudent = JSON.parse(localStorage.getItem('loggedInStudent'));
 
+// Get welcome message
 const getWelcomeMessage = () => {
   return `Welcome ${loggedInStudent.lastName} ${loggedInStudent.firstName} ${loggedInStudent.middleName}`;
 };
 
+// Get personal details as a 2D array
 const getPersonalDetails = () => {
   return [
     ['First Name', loggedInStudent.firstName],

@@ -1,3 +1,4 @@
+// Student data
 const students = [
   {
     firstName: 'John',

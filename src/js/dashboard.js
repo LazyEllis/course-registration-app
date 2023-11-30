@@ -1,3 +1,4 @@
+// Dashboard logic and rendering
 import { getWelcomeMessage, getPersonalDetails } from './dashboard-logic';
 import {
   populateWelcomeMessage,
@@ -8,6 +9,7 @@ const onDOMContentLoaded = () => {
   const welcomeMessage = getWelcomeMessage();
   const personalDetails = getPersonalDetails();
 
+  // Populate welcome message and display personal details
   populateWelcomeMessage(welcomeMessage);
   displayPersonalDetails(personalDetails);
 };
